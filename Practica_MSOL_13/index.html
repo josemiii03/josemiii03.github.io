@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>La WEdfB</title>
-    <style>
-
-    </style>
-  </head>
-  <body>
-    <header>
-        <nav>
-          <a href="/html/">HTML</a> 
-          <a href="/css/">CSS</a> 
-          <a href="/js/">JavaScript</a> 
-          <a href="/python/">Python</a>
-        </nav>    
-    </header>
-  </body>
+    <head>
+        <title>TEST</title>
+        <style>
+            body{
+                font-family:sans-serif;
+                margin:0px
+            }
+            .navegacion{
+                overflow: hidden;
+                background-color: #f1f1f1;
+            }
+            .titulo h1{
+                padding: 20px 0px 20px 0px;
+                color: blue;
+                background-color: aquamarine;
+                display: flex;            
+                justify-content: center;
+                width: 100%;
+                margin: 0px;
+            }
+            .navegacion{
+                display: flex;
+                justify-content: center;
+            }
+            .navegacion a{
+                text-decoration: none;
+                color:black;
+                padding: 10px;
+            }
+            .navegacion a:hover {
+                color: azure;
+                background-color: red;  
+            }
+        </style>
+    </head>
+    <body>
+        <header class="titulo">
+        <h1>La Web de José Miguel</h1>
+        <nav class="navegacion">
+            <a href="#sobremi">SOBRE MI</a>
+            <a href="#curriculum">CURRICULUM VITAE</a>
+            
+        </nav>
+        </header>
+    </body>
 </html>
