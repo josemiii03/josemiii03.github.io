@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>TEST</title>
-        <style>
+        <meta charset="UTF-8">
+        <meta name="author" content="José Miguel Calderón de la Barca Gutiérrez">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" type="text/css" href="Estilo.css"> -->
+        <title>La Web de José MIguel Calderón</title>
+        <!--Te pongo aquí el estilo por no complicarte con mas archivos -->
+        <style> 
             body{
                 font-family:sans-serif;
-                margin:0px
+                padding:10% 10% 20% 10%;
+                max-width: 900px;
+                border-radius: 20px;
+                margin: auto;
             }
-            .navegacion{
-                overflow: hidden;
-                background-color: #f1f1f1;
+            p{
+                font-size:21px;
+            }
+            .fondo{
+                background-color: aquamarine;
+                border-radius: 20px;
+                box-shadow: 1px 1px 52px -1px rgba(255,0,0,1);
+                
+                
             }
             .titulo h1{
+                border-radius: 19px 19px 0px 0px;
                 padding: 20px 0px 20px 0px;
-                color: blue;
-                background-color: aquamarine;
+                color: white;
+                background-color: #303F9F;
                 display: flex;            
                 justify-content: center;
                 width: 100%;
                 margin: 0px;
+                font-size: 40px;
+            }
+            footer{
+                border-radius: 0px 0px 19px 19px;
+                color: white;
+                background-color: #303F9F;
+                display: flex;            
+                justify-content: center;
+                width: 100%;
+                margin: 10px 0px 110px 0px;
+                font-size: 40px;
             }
             .navegacion{
+                overflow: hidden;
+                background-color: #5eb8ff;
                 display: flex;
                 justify-content: center;
             }
@@ -33,16 +61,90 @@
                 color: azure;
                 background-color: red;  
             }
+           
+            .articulos{
+                float;
+                display: block;
+                margin: 30px 20px 22px 20px;
+                background-color: skyblue;
+                border-radius: 10px;
+                padding: 20px 30px 20px 30px;
+                text-align:center;
+            }
+            .articulos h1{
+                color: red;
+                font-size: 35px;
+            }
+            img{
+                width: 300px;           
+            }
+            aside {
+                width: 200px;
+                margin: 50px;
+                float: right;
+                border-radius: 10px;
+                background-color: blueviolet;
+                color: aliceblue;
+                text-align: center;
+                
+            }
+            ul{
+                text-align: left;
+                font-size: 20px;
+            }
+            
         </style>
     </head>
     <body>
-        <header class="titulo">
-        <h1>La Web de José Miguel</h1>
-        <nav class="navegacion">
-            <a href="#sobremi">SOBRE MI</a>
-            <a href="#curriculum">CURRICULUM VITAE</a>
-            
-        </nav>
-        </header>
+        <div class="fondo">
+            <header class="titulo">
+            <h1>La Web de José Miguel</h1>
+            <nav class="navegacion">
+                <a href="#sobremi">SOBRE MI</a>
+                <a href="#curriculum">CURRICULUM VITAE</a>
+            </nav>
+            </header>
+            <aside>
+                <p>Atención!</p>
+                <p>Web Aún en construcción</p>
+            </aside>
+            <article  class="articulos">
+                    <h1>BIENVENIDO A MI WEB</h1>
+                    <section>
+                        <p>
+                        Aquí econtraras todo lo relativo a mi curriculun, experiencia profesional, además de mis redes sociales y contenido aportado a internet
+                        </p>
+                    </section>
+                </article>
+                
+            <article id="sobremi" class="articulos">
+                <section>
+                <h1>Sobre mí</h1>
+                    <p>Soy<b> desarrollador</b> con experiencia en software, marketing online, creación de aplicaciones móviles y <b>desarrollo de android para móviles</b>.
+                    </p>
+                    
+                    <p>Desde 2006 me apasiona la <b>informática</b> y mi carrera profesional siempre ha estado ligada al mundo del <b>desarrollo web</b>, la <b>robótica</b>, la tecnología, y la empresa.</p>
+                    
+                    <p>En 2021 monté mi primera <b>empresa de informática</b> y<b> </b>posteriormente creé varias startups como tarinet, mywoork.com, mainfu y formo parte de la familia Andalucia Open Future de Telefónica
+                    </p>
+                </section>
+            </article>
+            <article id="curriculo" class="articulos">
+                <section>
+                <h1>Curriculum Viatae</h1>
+                    <ul>
+                        <li> Titulo de Educación Secundaria Obligatoria</li>
+                        <li> Tecnico en Sistemas Microinformáticos y Redes</li>
+                        <li> Experto en Programación de Aplicaciones Multiplataforma</li>
+                    </ul>
+                    <ul>
+                        <li> Conocimientos en Ingles y Japonés. (no titulados)</li>
+                    </ul>
+                </section>
+            </article>
+            <footer>
+                <p>Copyright © 2020 José Miguel Calderón de la Barca Gutiérrez</p> 
+            </footer>
+          </div> 
     </body>
 </html>
