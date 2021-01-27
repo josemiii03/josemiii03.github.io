@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="José Miguel Calderón de la Barca Gutiérrez">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" type="text/css" href="Estilo.css"> -->
+        <title>La Web de José MIguel Calderón</title>
+        <!--Te pongo aquí el estilo por no complicarte con mas archivos -->
+        <style> 
+            body{
+                font-family:sans-serif;
+                padding:10% 5% 20% 5%;
+                max-width: 900px;
+                border-radius: 20px;
+                margin: auto;
+                background-color: black;
+            }
+            p{
+                font-size:21px;
+            }
+            .fondo{
+                background-color: aquamarine;
+                border-radius: 20px;
+                box-shadow: 1px 1px 52px -1px rgba(255,0,0,1);
+                
+                
+            }
+            .titulo h1{
+                border-radius: 19px 19px 0px 0px;
+                padding: 20px 0px 20px 0px;
+                color: white;
+                background-color: #303F9F;
+                text-align: center;
+                display: block;            
+                width: 100%;
+                margin: 0px;
+                font-size: calc(1rem + 2vw);
+            }
+            footer{
+                border-radius: 0px 0px 19px 19px;
+                color: white;
+                background-color: #303F9F;
+                display: flex;            
+                justify-content: center;
+                width: 100%;
+                margin: 10px 0px 110px 0px;
+                font-size: 40px;
+            }
+            .navegacion{
+                overflow: hidden;
+                background-color: #5eb8ff;
+                display: flex;
+                justify-content: center;
+            }
+            .navegacion a{
+                text-decoration: none;
+                color:black;
+                padding: 10px;
+            }
+            .navegacion a:hover {
+                color: azure;
+                background-color: red;  
+            }
+            
+            .articulos{
+                float;
+                display: block;
+                margin: 30px 20px 22px 20px;
+                background-color: skyblue;
+                border-radius: 10px;
+                padding: 20px 30px 20px 30px;
+                text-align:center;
+            }
+            .articulos h1{
+                color: red;
+                font-size: calc(1rem + 1vw);
+            }
+            img{
+                width: 300px;           
+            }
+            aside {
+                width: 200px;
+                margin: 50px;
+                float: right;
+                border-radius: 10px;
+                background-color: blueviolet;
+                color: aliceblue;
+                text-align: center;
+                
+            }
+            ul{
+                text-align: left;
+                font-size: 20px;
+            }
+            footer p{
+                font-size: calc(0.5rem + 1vw)
+            }
+            form{
+                background-color: black;
+                border-radius: 20px;
+                padding: 5% 0% 5% 0%;
+                margin: 5% 15% 5% 15%;
+                color: azure;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fondo">
+            <header class="titulo">
+            <h1>La Web de José Miguel</h1>
+            <nav class="navegacion">
+                <a href="">SOBRE MI</a>
+                <a href="#curriculum">CURRICULUM VITAE</a>
+                <a class="aqui" href="">Contactar</a>
+            </nav>
+            </header>
+            
+                           
+                <form>
+                    <h1>Formulario</h1>
+                    Nombre: <input type="text" value="Manolo"><br>
+                    Apellidos: <input type="text" value="pizarro" ><br>
+                    
+                    <input type="submit" value="Submit">                    
+                </form>
+                
+           
+            
+            <footer>
+                <p>Copyright © 2020 José Miguel Calderón de la Barca Gutiérrez</p> 
+            </footer>
+          </div> 
+    </body>
+</html>
