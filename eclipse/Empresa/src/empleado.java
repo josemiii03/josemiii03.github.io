@@ -6,6 +6,17 @@ public class empleado {
 	public String fecha_alt;
 	public double salario;
 	
+	
+	public empleado(String apellido, String oficio, String fecha_alt, int emp_no, double salario) {
+		this.apellido = apellido;
+		this.oficio = oficio;
+		this.fecha_alt = fecha_alt;
+		this.emp_no = emp_no;
+		this.salario = salario;
+		
+	}
+	
+	
 	public void datoEmpleado() {
 		System.out.println("-El número de empleado es      : " + this.emp_no);
 		System.out.println("-El Apellido de empleado es    : " + this.apellido);

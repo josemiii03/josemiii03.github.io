@@ -8,6 +8,14 @@ public class gato {
 	public String fechaCompra;
 	
 	
+	public gato(String nombre, double peso, String color, String fechaCompra) {
+		this.nombre = nombre;
+		this.peso = peso;
+		this.color = color;
+		this.fechaCompra = fechaCompra;
+	}
+
+
 	public void leergato() {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("-El nombre es: " + this.nombre);
