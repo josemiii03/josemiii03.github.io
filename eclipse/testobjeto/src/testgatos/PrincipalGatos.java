@@ -8,7 +8,7 @@ public class PrincipalGatos {
 	public static void main(String[] args) {
 
 		
-		gato gato1 = new gato( "michi", 95, "blanco", "21-07-2013");
+		gato gato1 = new gato( "michi", 95, "blanco", "21-07-2013");//con constructor
 		gato gato2 = new gato( "garfield", 200, "naranja", "31-06-2013");
 		
 		gato1.leergato();
@@ -51,18 +51,18 @@ public class PrincipalGatos {
         LocalDate gatoA = LocalDate.parse(gato1.fechaCompra, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         LocalDate gatoB = LocalDate.parse(gato2.fechaCompra, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         
-        System.out.println("con Local Date");
+        System.out.println("Con Local Date:");
         
         
         if (gatoA.isAfter(gatoB)) {
-        	System.out.println("El gato mas viejo es '" + gato2.nombre + "'");
+        	System.out.println("El gato mas viejo es " + gato2.nombre + "");
         	return gato2;
         } else {
         	if (gatoB.isAfter(gatoA)) {
-        		System.out.println("El gato mas viejo es '" + gato1.nombre + "'");
+        		System.out.println("El gato mas viejo es " + gato1.nombre + "");
             	return gato1;
             } else {
-            	System.out.println(gato1.nombre + " y " + gato2.nombre + " son iguales!!");
+            	System.out.println(gato1.nombre + " y " + gato2.nombre + " son iguaes!!");
             	return null;
             }
         }
@@ -70,11 +70,9 @@ public class PrincipalGatos {
 	
 	
 
-	
-	// ------------------------ FORMA1----------------------------------------------------------------------------------------
 	public static gato gatoMasViejo(gato gato1, gato gato2) {
 
-		System.out.println("Sin local date");
+		System.out.println("Sin local date:");
 		
 		
 		if (decirAño(gato1.fechaCompra) < decirAño(gato2.fechaCompra)) {

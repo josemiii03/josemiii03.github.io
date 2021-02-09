@@ -15,7 +15,7 @@ public class gato {
 		this.fechaCompra = fechaCompra;
 	}
 
-
+	//constructor
 	public void leergato() {
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("-El nombre es: " + this.nombre);
