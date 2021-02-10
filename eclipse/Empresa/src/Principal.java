@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 
 public class Principal {
@@ -11,10 +12,9 @@ public class Principal {
 
 		empleado[] empleados = new empleado[5];
 
-		empleados[0] = new empleado(1, "Calderón", "Programador", LocalDate.of(2019, 01, 30), 200);
+		//Empleados por defecto....
 		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
 		empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
-		empleados[3] = null;
 		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 2030);
 
 		boolean bandera = false;
@@ -87,11 +87,11 @@ public class Principal {
 							break;
 						case 4:
 							System.out.println("Introduce la fecha nueva en el formato AAAA - MM - DD");
-							System.out.println("	Inserta el Año:");
+							System.out.print("	Inserta el Año:");
 							int año = Integer.parseInt(teclado.readLine());
-							System.out.println("	Inserta el Mes:");
+							System.out.print("	Inserta el Mes:");
 							int mes = Integer.parseInt(teclado.readLine());
-							System.out.println("	Inserta el dia:");
+							System.out.print("	Inserta el dia:");
 							int dia = Integer.parseInt(teclado.readLine());
 
 							empleados[emp].setFecha_alt(LocalDate.of(año, mes, dia));
@@ -113,18 +113,34 @@ public class Principal {
 					break;
 				}
 
-			} catch (ArrayIndexOutOfBoundsException e) { // Manejo del array que se genera al devolver un número
-															// negativo cuando el empleado no existe
-				System.out.println("Este empleado no existe");
-			} catch (NumberFormatException | IOException e) { // Manejo el error de entrada de un caracter no numérico o
-																// no aceptado
-				System.out.println("Introduce un número correcto");
+			} catch (ArrayIndexOutOfBoundsException e) { // control de errores
+				System.out.println("Este empleado no existe!!");
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("Caracter o número Inválido!");
+			} catch (DateTimeException e) {
+				System.out.println("Fecha inválida!");
 			}
-
 		} while (bandera == false);
 
 	}
 
+	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
+		public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
+
+			System.out.println("Introduce un nº");
+
+			int lectura = (Integer.parseInt(teclado.readLine()));
+
+			for (int i = 0; i < empleados.length; i++) {
+				if (empleados[i] != null) {
+					if (empleados[i].getEmp_no() == lectura) {
+						return i;
+					}
+				}
+			}
+			return -999999; // devuelvo esto para generar un error y expresar que el empleado no existe
+		}
+		
 	public static void mostrarEmpleados(empleado[] empleados) {
 		for (int i = 0; i < empleados.length; i++) {
 			if (empleados[i] != null) {
@@ -148,21 +164,6 @@ public class Principal {
 		}
 	}
 
-	public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
-
-		System.out.println("Introduce un nº");
-
-		int lectura = (Integer.parseInt(teclado.readLine()));
-
-		for (int i = 0; i < empleados.length; i++) {
-			if (empleados[i] != null) {
-				if (empleados[i].getEmp_no() == lectura) {
-					return i;
-				}
-			}
-		}
-		return -999999; // devuelvo esto para generar un error y expresar que el empleado no existe
-	}
 
 	public static void modAtributos(empleado empleados[], int empleado) throws NumberFormatException, IOException {
 
