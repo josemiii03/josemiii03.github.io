@@ -78,12 +78,12 @@ public class empleado {
 	
 	@Override
 	public String toString() {
-		return "empleado [emp_no=" + emp_no + ", apellido=" + apellido + ", oficio=" + oficio + ", fecha_alt="
-				+ fecha_alt + ", salario=" + salario + "]";
+		return "Empleado nº " + emp_no + ", apellido " + apellido + ", oficio " + oficio + ", fecha_alt "
+				+ fecha_alt + ", salario " + salario ;
 	}
 
 
-	public void datoEmpleado() {
+	public void datosEmpleado() {
 		System.out.println(toString());
 	}
 }
