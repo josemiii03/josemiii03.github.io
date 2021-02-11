@@ -128,7 +128,7 @@ public class Principal {
 		}
 		
 	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
-		public static int obtenerIndice(empleado[] empleados) throws NumberFormatException, IOException {
+		public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
 
 			System.out.println("Introduce un nº");
 
