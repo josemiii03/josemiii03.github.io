@@ -7,10 +7,11 @@ import java.time.LocalDate;
 public class Principal {
 
 	static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+	
+	static empleado[] empleados = new empleado[5];
+
 
 	public static void main(String[] args) {
-
-		empleado[] empleados = new empleado[5];
 
 		//Empleados por defecto....
 		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
@@ -33,6 +34,9 @@ public class Principal {
 				System.out.println("");
 				System.out.println("6. Salir del programa ");
 				System.out.println("__________________________________________________________________");
+				System.out.println("7. Ejecutar Test ");
+				System.out.println("__________________________________________________________________");
+
 				int lectura = Integer.parseInt(teclado.readLine());
 
 				switch (lectura) {
@@ -107,12 +111,14 @@ public class Principal {
 						}
 
 					} while (bandera2 == false);
-					break;
+					break;	
 				case 6:
 					bandera = true;
 					break;
+				case 7:
+					test();
 				}
-
+				
 			} catch (ArrayIndexOutOfBoundsException e) { // control de errores
 				System.out.println("Este empleado no existe!!");
 			} catch (NumberFormatException | IOException e) {
@@ -167,22 +173,64 @@ public class Principal {
 		}
 	}
 	
+	public static boolean existeEmpleado(int emp_no) {
+		
+		for (int i = 0; i < empleados.length; i++) {
+			if (empleados[i] != null) {
+				if (empleados[i].getEmp_no() == emp_no) {
+					return true;
+				}
+			}
+		}
+		return false;
+		
+	}
+	
+	public static boolean arrayCompleto() {
+		for (int i = 0; i < empleados.length; i++) {
+			if (empleados[i] == null) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static boolean arrayVacio() {
+		for (int i = 0; i < empleados.length; i++) {
+			if (empleados[i] != null) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public static void test() throws NumberFormatException, IOException{ 
+	
+		//testeo existeEmpleado()
+	if(existeEmpleado(Integer.parseInt(teclado.readLine())) == true) {
+		System.out.println("El empleado existe");
+	}else {
+		System.out.println("El empleado no existe");
+	}
+		//testeo array vacio
+	
+	if(arrayVacio() == true) {
+		System.out.println("El Array está lleno");
+	}else {
+		System.out.println("El Array tiene espacio libre");
+	}
+	
+		//Testeo array completo
+	
+	if(arrayCompleto() == true) {
+		System.out.println("El Array tiene espacio libre");
+	}else {
+		System.out.println("El Array está lleno");
+	}
+		 
+	}
 	
 
-	public static void modAtributos(empleado empleados[], int empleado) throws NumberFormatException, IOException {
+	
 
-	}
-
-	/*
-	 * public static void mostrarEmpleadoPorEmp_N(empleado[] empleados) {
-	 * System.out.println(); System.out.println("Introduce el nº de empleador"); try
-	 * { boolean encontrado = false; int empNuBuscado =
-	 * Integer.parseInt(teclado.readLine()); for (int i = 0; i < empleados.length;
-	 * i++) { if(empleados[i].getEmp_no() == empNuBuscado) {
-	 * empleados[i].datoEmpleado(); encontrado = true; } } if (encontrado == false)
-	 * {System.out.println("No se encuntrea ese empleado");}
-	 * 
-	 * } catch (NumberFormatException | IOException e) {
-	 * System.out.println("Introduce un caracter correcto!!!!!"); } }
-	 */
+	
 }
