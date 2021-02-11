@@ -14,8 +14,8 @@ public class Principal {
 	public static void main(String[] args) {
 
 		//Empleados por defecto....
-		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
-		empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
+	//	empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
+	//	empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
 		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 2030);
 
 		boolean bandera = false;
@@ -187,19 +187,26 @@ public class Principal {
 	}
 	
 	public static boolean arrayCompleto() {
-		for (int i = 0; i < empleados.length; i++) {
+		
+		int i = 0;
+		while(i<5) {
 			if (empleados[i] == null) {
 				return false;
-			}
+			} 
+			i++;
 		}
 		return true;
+		
+	
 	}
 	
 	public static boolean arrayVacio() {
-		for (int i = 0; i < empleados.length; i++) {
+		int i=0;
+		while(i<5) {
 			if (empleados[i] != null) {
 				return false;
 			}
+			i++;
 		}
 		return true;
 	}
@@ -213,20 +220,21 @@ public class Principal {
 	}
 		//testeo array vacio
 	
-	if(arrayVacio() == true) {
-		System.out.println("El Array está lleno");
-	}else {
-		System.out.println("El Array tiene espacio libre");
-	}
+	
 	
 		//Testeo array completo
 	
-	if(arrayCompleto() == true) {
-		System.out.println("El Array tiene espacio libre");
+	if(arrayVacio() == true) {
+		System.out.println("El Array está vacio");
 	}else {
-		System.out.println("El Array está lleno");
+		System.out.println("El Array está no está vacio");
 	}
-		 
+	
+	if(arrayCompleto() == true) {
+		System.out.println("El Array está lleno");
+	}else {
+		System.out.println("El Array está no está lleno");
+	}
 	}
 	
 
