@@ -14,8 +14,8 @@ public class Principal {
 	public static void main(String[] args) {
 
 		//Empleados por defecto....
-	//	empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
-	//	empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
+		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
+		empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
 		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 2030);
 
 		boolean bandera = false;
@@ -174,13 +174,14 @@ public class Principal {
 	}
 	
 	public static boolean existeEmpleado(int emp_no) {
-		
-		for (int i = 0; i < empleados.length; i++) {
+		int i = 0;
+		while(i<5) {
 			if (empleados[i] != null) {
 				if (empleados[i].getEmp_no() == emp_no) {
 					return true;
 				}
 			}
+			i++;
 		}
 		return false;
 		
