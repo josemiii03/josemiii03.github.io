@@ -1,0 +1,21 @@
+img {
+    float: right;
+}
+h1{
+    font-size: 25px;
+    color:red;
+}
+nav div{
+    background-color: aqua
+}
+article p{
+    font-family: sans-serif;
+    background-color: coral;
+    color: blue;
+    font-size: :18px;
+}
+
+.tamañoPerfecto{
+    font-size: 15px;
+    background-color: aquamarine;
+}

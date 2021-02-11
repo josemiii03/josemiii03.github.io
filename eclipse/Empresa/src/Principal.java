@@ -32,7 +32,7 @@ public class Principal {
 				System.out.println("5. Modificar atributo de empleado a partir de sunº de empleado");
 				System.out.println("");
 				System.out.println("6. Salir del programa ");
-				System.out.println("___________________________________________________________________");
+				System.out.println("__________________________________________________________________");
 				int lectura = Integer.parseInt(teclado.readLine());
 
 				switch (lectura) {
@@ -123,7 +123,10 @@ public class Principal {
 		} while (bandera == false);
 
 	}
-
+		public static void editarNum(){
+			
+		}
+		
 	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
 		public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
 
@@ -163,7 +166,8 @@ public class Principal {
 			System.out.println("no hay hueco para añadir mas empleados ;-;");
 		}
 	}
-
+	
+	
 
 	public static void modAtributos(empleado empleados[], int empleado) throws NumberFormatException, IOException {
 
