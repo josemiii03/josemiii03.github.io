@@ -5,7 +5,7 @@ public class empleado {
 	public String apellido;
 	public String oficio;
 	public LocalDate fecha_alt;
-	public double salario;
+	public int salario;
 	
 	
 	/**
@@ -15,7 +15,7 @@ public class empleado {
 	 * @param fecha_alt
 	 * @param salario
 	 */
-	public empleado(int emp_no, String apellido, String oficio, LocalDate fecha_alt, double salario) {
+	public empleado(int emp_no, String apellido, String oficio, LocalDate fecha_alt, int salario) {
 		this.emp_no = emp_no;
 		this.apellido = apellido;
 		this.oficio = oficio;
@@ -69,7 +69,7 @@ public class empleado {
 	}
 
 
-	public void setSalario(double salario) {
+	public void setSalario(int salario) {
 		this.salario = salario;
 	}
 

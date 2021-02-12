@@ -16,9 +16,9 @@ public class Principal {
 		//Empleados por defecto....
 		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
 		empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
-		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 2030);
+		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 030);
 
-		boolean bandera = false;
+		boolean terminarMenu = false;
 		do {
 			try {
 
@@ -32,9 +32,10 @@ public class Principal {
 				System.out.println("4. Borrar un empleado a partir de nº de empleado");
 				System.out.println("5. Modificar atributo de empleado a partir de sunº de empleado");
 				System.out.println("");
-				System.out.println("6. Salir del programa ");
+				System.out.println("6. Mostrar el empleado con el salario máximo ");
+				System.out.println("7. Salir del programa ");
 				System.out.println("__________________________________________________________________");
-				System.out.println("7. Ejecutar Test ");
+				System.out.println("8. Ejecutar Test ");
 				System.out.println("__________________________________________________________________");
 
 				int lectura = Integer.parseInt(teclado.readLine());
@@ -47,18 +48,21 @@ public class Principal {
 					break;
 				case 2:
 					empleados[EmpleadoPorEmp_N(empleados)].datosEmpleado();
+					
 					break;
 				case 3:
 					añadirEmpleado(empleados);
+					mostrarEmpleados(empleados);
 					break;
 				case 4:
 					empleados[EmpleadoPorEmp_N(empleados)] = null;
+					mostrarEmpleados(empleados);
 					break;
 				case 5:
 
 					int emp = EmpleadoPorEmp_N(empleados);
 
-					boolean bandera2 = false;
+					boolean terminarSubmenu = false;
 					do {
 						System.out.println();
 						System.out.println("_______________SUBMENÚ PARA MODIFICAR EMPLEADOS____________________");
@@ -106,16 +110,22 @@ public class Principal {
 							empleados[emp].setSalario(Integer.parseInt(teclado.readLine()));
 							break;
 						case 6:
-							bandera2 = true;
+							terminarSubmenu = true;
 							break;
 						}
 
-					} while (bandera2 == false);
+					} while (terminarSubmenu == false);
 					break;	
+					
 				case 6:
-					bandera = true;
+					System.out.println("El empleado con el mayor salario es: ");
+					System.out.println(empleados[posicionSalarioMaximo()]);
+					System.out.println("");
 					break;
 				case 7:
+					terminarMenu = true;
+					break;
+				case 8:
 					test();
 				}
 				
@@ -126,7 +136,7 @@ public class Principal {
 			} catch (DateTimeException e) {
 				System.out.println("Fecha inválida!");
 			}
-		} while (bandera == false);
+		} while (terminarMenu == false);
 
 	}
 		public static void editarNum(){
@@ -211,31 +221,54 @@ public class Principal {
 		}
 		return true;
 	}
-	public static void test() throws NumberFormatException, IOException{ 
 	
-		//testeo existeEmpleado()
-	if(existeEmpleado(Integer.parseInt(teclado.readLine())) == true) {
-		System.out.println("El empleado existe");
-	}else {
-		System.out.println("El empleado no existe");
+	public static int posicionSalarioMaximo() {
+		int temp = 0;
+		int indice = 0;
+		for (int i = 1; i<empleados.length; i++) {
+			if (empleados[i] != null) {
+				if (empleados[i].salario > temp) {
+					temp = empleados[i].salario;
+					indice = i;
+				}
+			}
+		}
+		
+		
+		return indice;
 	}
+	
+	public static void test() throws NumberFormatException, IOException{ 
+		mostrarEmpleados(empleados);
+		System.out.println(posicionSalarioMaximo());
+		
+		
+		
+		
+		
+//		testeo existeEmpleado()
+//	if(existeEmpleado(Integer.parseInt(teclado.readLine())) == true) {
+//		System.out.println("El empleado existe");
+//	}else {
+//		System.out.println("El empleado no existe");
+//	}
 		//testeo array vacio
 	
 	
 	
 		//Testeo array completo
 	
-	if(arrayVacio() == true) {
-		System.out.println("El Array está vacio");
-	}else {
-		System.out.println("El Array está no está vacio");
-	}
+//	if(arrayVacio() == true) {
+//		System.out.println("El Array está vacio");
+//	}else {
+//		System.out.println("El Array está no está vacio");
+//	}
 	
-	if(arrayCompleto() == true) {
-		System.out.println("El Array está lleno");
-	}else {
-		System.out.println("El Array está no está lleno");
-	}
+//	if(arrayCompleto() == true) {
+//		System.out.println("El Array está lleno");
+//	}else {
+//		System.out.println("El Array está no está lleno");
+//	}
 	}
 	
 
