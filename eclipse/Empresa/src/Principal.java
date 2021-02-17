@@ -232,9 +232,7 @@ public class Principal {
 					indice = i;
 				}
 			}
-		}
-		
-		
+		}	
 		return indice;
 	}
 	
