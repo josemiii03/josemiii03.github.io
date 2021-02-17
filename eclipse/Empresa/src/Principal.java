@@ -187,16 +187,14 @@ public class Principal {
 		}
 	}
 	
-	public static int huecoEmpleado() {
+	public static int buscaHueco() {
 		int i;
-		boolean hueco = false;
-		
 		for (i = 0; i < empleados.length; i++) {
 			if (empleados[i] == null) {
 				return i;
 			}
 		}
-		return 0;
+		return -1;
 	}
 	
 	public static boolean existeEmpleado(int emp_no) {
@@ -255,6 +253,9 @@ public class Principal {
 	public static void test() throws NumberFormatException, IOException{ 
 		mostrarEmpleados(empleados);
 		System.out.println("El empleado con salario máximo tiene el id: "+posicionSalarioMaximo());
+		
+		System.out.println("El hueco libre tiene la id "+buscaHueco());
+
 		
 		
 		
