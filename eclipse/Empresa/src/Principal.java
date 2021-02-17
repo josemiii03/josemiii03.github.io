@@ -19,6 +19,10 @@ public class Principal {
 		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 030);
 
 		boolean terminarMenu = false;
+		
+		//int indiceVacio = huecoEmpleado(); 
+		//!!!!!!No añadir empleados por defecto. Hacer metodo para cargarlos y empezar con 0
+		
 		do {
 			try {
 
@@ -181,6 +185,18 @@ public class Principal {
 		if (hueco == false) {
 			System.out.println("no hay hueco para añadir mas empleados ;-;");
 		}
+	}
+	
+	public static int huecoEmpleado() {
+		int i;
+		boolean hueco = false;
+		
+		for (i = 0; i < empleados.length; i++) {
+			if (empleados[i] == null) {
+				return i;
+			}
+		}
+		return 0;
 	}
 	
 	public static boolean existeEmpleado(int emp_no) {
