@@ -14,14 +14,14 @@ public class Principal {
 	public static void main(String[] args) {
 
 		//Empleados por defecto....
-		empleados[1] = new empleado(2, "MuÃ±oz", "Contable", LocalDate.of(2020, 04, 03), 1576);
-		empleados[2] = new empleado(3, "CastaÃ±o", "Programador", LocalDate.of(2019, 10, 30), 200);
+		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
+		empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
 		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 030);
 
 		boolean terminarMenu = false;
 		
 		//int indiceVacio = huecoEmpleado(); 
-		//!!!!!!No aÃ±adir empleados por defecto. Hacer metodo para cargarlos y empezar con 0
+		//!!!!!!No añadir empleados por defecto. Hacer metodo para cargarlos y empezar con 0
 		
 		do {
 			try {
@@ -30,13 +30,13 @@ public class Principal {
 				System.out.println("_______________EMPLEADOS__________________________________________");
 				System.out.println();
 				System.out.println("1. Mostrar todos los Empleados.");
-				System.out.println("2. Mostrar un empleado a partir de su nÂº de empleado");
+				System.out.println("2. Mostrar un empleado a partir de su nº de empleado");
 				System.out.println("");
 				System.out.println("3. Insertar un empleado.");
-				System.out.println("4. Borrar un empleado a partir de nÂº de empleado");
-				System.out.println("5. Modificar atributo de empleado a partir de sunÂº de empleado");
+				System.out.println("4. Borrar un empleado a partir de nº de empleado");
+				System.out.println("5. Modificar atributo de empleado a partir de sunº de empleado");
 				System.out.println("");
-				System.out.println("6. Mostrar el empleado con el salario mÃ¡ximo ");
+				System.out.println("6. Mostrar el empleado con el salario máximo ");
 				System.out.println("7. Salir del programa ");
 				System.out.println("__________________________________________________________________");
 				System.out.println("8. Ejecutar Test ");
@@ -46,7 +46,7 @@ public class Principal {
 
 				switch (lectura) {
 				default:
-					System.out.println("Introduce una opciÃ³n existente");
+					System.out.println("Introduce una opción existente");
 				case 1:
 					mostrarEmpleados(empleados);
 					break;
@@ -55,7 +55,7 @@ public class Principal {
 					
 					break;
 				case 3:
-					aÃ±adirEmpleado(empleados);
+					añadirEmpleado(empleados);
 					mostrarEmpleados(empleados);
 					break;
 				case 4:
@@ -69,24 +69,24 @@ public class Principal {
 					boolean terminarSubmenu = false;
 					do {
 						System.out.println();
-						System.out.println("_______________SUBMENÃš PARA MODIFICAR EMPLEADOS____________________");
+						System.out.println("_______________SUBMENÚ PARA MODIFICAR EMPLEADOS____________________");
 						empleados[emp].datosEmpleado();
 						System.out.println();
-						System.out.println("1. Editar 'nÂº' de empleado.");
+						System.out.println("1. Editar 'nº' de empleado.");
 						System.out.println("2. Editar 'Appellido' del empleado.");
 						System.out.println("3. Editar 'Oficio' del empleado.");
 						System.out.println("4. Editar 'Fecha' del empleado");
 						System.out.println("5. Editar 'Salario' del empleado");
 						System.out.println("");
-						System.out.println("6. Volver al MenÃº principal");
+						System.out.println("6. Volver al Menú principal");
 						System.out.println("___________________________________________________________________");
 						lectura = Integer.parseInt(teclado.readLine());
 
 						switch (lectura) {
 						default:
-							System.out.println("Introduce una opciÃ³n existente");
+							System.out.println("Introduce una opción existente");
 						case 1:
-							System.out.println("Introduce el nÃºmero nuevo que deseas asingnarle");
+							System.out.println("Introduce el número nuevo que deseas asingnarle");
 							empleados[emp].setEmp_no(Integer.parseInt(teclado.readLine()));
 							break;
 						case 2:
@@ -99,14 +99,14 @@ public class Principal {
 							break;
 						case 4:
 							System.out.println("Introduce la fecha nueva en el formato AAAA - MM - DD");
-							System.out.print("	Inserta el AÃ±o:");
-							int aÃ±o = Integer.parseInt(teclado.readLine());
+							System.out.print("	Inserta el Año:");
+							int año = Integer.parseInt(teclado.readLine());
 							System.out.print("	Inserta el Mes:");
 							int mes = Integer.parseInt(teclado.readLine());
 							System.out.print("	Inserta el dia:");
 							int dia = Integer.parseInt(teclado.readLine());
 
-							empleados[emp].setFecha_alt(LocalDate.of(aÃ±o, mes, dia));
+							empleados[emp].setFecha_alt(LocalDate.of(año, mes, dia));
 
 							break;
 						case 5:
@@ -136,9 +136,9 @@ public class Principal {
 			} catch (ArrayIndexOutOfBoundsException e) { // control de errores
 				System.out.println("Este empleado no existe!!");
 			} catch (NumberFormatException | IOException e) {
-				System.out.println("Caracter o nÃºmero InvÃ¡lido!");
+				System.out.println("Caracter o número Inválido!");
 			} catch (DateTimeException e) {
-				System.out.println("Fecha invÃ¡lida!");
+				System.out.println("Fecha inválida!");
 			}
 		} while (terminarMenu == false);
 
@@ -150,7 +150,7 @@ public class Principal {
 	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
 		public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
 
-			System.out.println("Introduce un nÂº");
+			System.out.println("Introduce un nº");
 
 			int lectura = (Integer.parseInt(teclado.readLine()));
 
@@ -172,7 +172,7 @@ public class Principal {
 		}
 	}
 
-	public static void aÃ±adirEmpleado(empleado[] empleados) {
+	public static void añadirEmpleado(empleado[] empleados) {
 		boolean hueco = false;
 		int i;
 		for (i = 0; i < empleados.length; i++) {
@@ -183,7 +183,7 @@ public class Principal {
 			}
 		}
 		if (hueco == false) {
-			System.out.println("no hay hueco para aÃ±adir mas empleados ;-;");
+			System.out.println("no hay hueco para añadir mas empleados ;-;");
 		}
 	}
 	
@@ -254,7 +254,7 @@ public class Principal {
 	
 	public static void test() throws NumberFormatException, IOException{ 
 		mostrarEmpleados(empleados);
-		System.out.println("El empleado con salario mÃ¡ximo tiene el id: "+posicionSalarioMaximo());
+		System.out.println("El empleado con salario máximo tiene el id: "+posicionSalarioMaximo());
 		
 		System.out.println("El hueco libre tiene la id "+buscaHueco());
 
@@ -276,15 +276,15 @@ public class Principal {
 		//Testeo array completo
 	
 //	if(arrayVacio() == true) {
-//		System.out.println("El Array estÃ¡ vacio");
+//		System.out.println("El Array está vacio");
 //	}else {
-//		System.out.println("El Array estÃ¡ no estÃ¡ vacio");
+//		System.out.println("El Array está no está vacio");
 //	}
 	
 //	if(arrayCompleto() == true) {
-//		System.out.println("El Array estÃ¡ lleno");
+//		System.out.println("El Array está lleno");
 //	}else {
-//		System.out.println("El Array estÃ¡ no estÃ¡ lleno");
+//		System.out.println("El Array está no está lleno");
 //	}
 	}
 	
