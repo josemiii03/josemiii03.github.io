@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 
-public class Principal {
+public class principal {
 
 	static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 	
@@ -241,7 +241,7 @@ public class Principal {
 		}	
 		return indice;
 	}
-	
+
 	public static int buscaHueco() {
 		int i;
 		for (i = 0; i < empleados.length; i++) {
@@ -251,22 +251,15 @@ public class Principal {
 		}
 		return -1;
 	}
-	
-	public static void test() throws NumberFormatException, IOException{ 
-		//mostrarEmpleados(empleados);
-		//System.out.println("El empleado con salario máximo tiene el id: "+posicionSalarioMaximo());
-		
-		System.out.println("El hueco libre tiene la id "+buscaHueco());
 
-		
-		
-		
-		
-		
+	public static void test() throws NumberFormatException, IOException {
+		// mostrarEmpleados(empleados);
+		// System.out.println("El empleado con salario máximo tiene el id:
+		// "+posicionSalarioMaximo());
+
+		System.out.println("El hueco libre tiene la id " + buscaHueco());
+
 	}
-	
-
-	
-
-	
 }
+
+	
