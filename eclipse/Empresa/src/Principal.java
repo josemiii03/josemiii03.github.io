@@ -240,7 +240,7 @@ public class Principal {
 	
 	public static void test() throws NumberFormatException, IOException{ 
 		mostrarEmpleados(empleados);
-		System.out.println(posicionSalarioMaximo());
+		System.out.println("El empleado con salario máximo tiene el id: "+posicionSalarioMaximo());
 		
 		
 		
