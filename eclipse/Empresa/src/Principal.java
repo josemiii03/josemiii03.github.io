@@ -253,8 +253,8 @@ public class Principal {
 	}
 	
 	public static void test() throws NumberFormatException, IOException{ 
-		mostrarEmpleados(empleados);
-		System.out.println("El empleado con salario máximo tiene el id: "+posicionSalarioMaximo());
+		//mostrarEmpleados(empleados);
+		//System.out.println("El empleado con salario máximo tiene el id: "+posicionSalarioMaximo());
 		
 		System.out.println("El hueco libre tiene la id "+buscaHueco());
 
@@ -263,29 +263,6 @@ public class Principal {
 		
 		
 		
-//		testeo existeEmpleado()
-//	if(existeEmpleado(Integer.parseInt(teclado.readLine())) == true) {
-//		System.out.println("El empleado existe");
-//	}else {
-//		System.out.println("El empleado no existe");
-//	}
-		//testeo array vacio
-	
-	
-	
-		//Testeo array completo
-	
-//	if(arrayVacio() == true) {
-//		System.out.println("El Array está vacio");
-//	}else {
-//		System.out.println("El Array está no está vacio");
-//	}
-	
-//	if(arrayCompleto() == true) {
-//		System.out.println("El Array está lleno");
-//	}else {
-//		System.out.println("El Array está no está lleno");
-//	}
 	}
 	
 
