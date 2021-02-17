@@ -22,7 +22,7 @@
             .fondo{
                 background-color: aquamarine;
                 border-radius: 20px;
-                box-shadow: 1px 1px 52px -1px rgba(255,0,0,1);
+                box-shadow: 1px 1px 52px -1px rgba(190, 220, 0, 1);
                 
                 
             }
@@ -107,21 +107,45 @@
         </style>
     </head>
     <body>
+        
+        <script>
+        
+            alert("Hola buenos dias");
+        
+        </script>
+        
         <div class="fondo">
             <header class="titulo">
             <h1>La Web de José Miguel</h1>
             <nav class="navegacion">
-                <a href="">SOBRE MI</a>
-                <a href="#curriculum">CURRICULUM VITAE</a>
-                <a class="aqui" href="">Contactar</a>
+                <a href="index.html">Volver al inicio</a>
+               
             </nav>
             </header>
             
                            
                 <form>
                     <h1>Formulario</h1>
-                    Nombre: <input type="text" value="Manolo"><br>
-                    Apellidos: <input type="text" value="pizarro" ><br>
+                    <label for="fname">Nombre:</label>
+                    <input type="text" value="Manolo"><br>
+                    <label for="lname">Apellidos:</label>
+                    <input type="text" value="pizarro" >
+                    
+                    <br>
+                    
+                    
+                    
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                    
+                    
+                    
+                    
+                    <br>
                     
                     <input type="submit" value="Submit">                    
                 </form>
@@ -129,7 +153,7 @@
            
             
             <footer>
-                <p>Copyright © 2020 José Miguel Calderón de la Barca Gutiérrez</p> 
+                <p>Copyright © 2021 José Miguel Calderón de la Barca Gutiérrez</p> 
             </footer>
           </div> 
     </body>
