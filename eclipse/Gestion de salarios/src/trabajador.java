@@ -1,12 +1,11 @@
 
 public class trabajador {
-	
-	
+
 	public String Nombre;
 	public String Apellidos;
 	public int salarioBruto;
 	public boolean Situación;
-	
+
 	/**
 	 * @param nombre
 	 * @param apellidos
@@ -23,14 +22,25 @@ public class trabajador {
 	@Override
 	public String toString() {
 		return "trabajador [Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", salarioBruto=" + salarioBruto
-				+ ", Situación=" +  + "]";
+				+ ", Situación=" + situacion() + "]";
 	}
-	
-	public void situación(){
-		if 
+
+	public String situacion() {
+
+		if (Situación == true) {
+			return " Activo ";
+		}
+		return " De Baja ";
+
 	}
-	
-	
+
+	public boolean isSituación() {
+		return Situación;
+	}
+
+	public int getSalarioBruto() {
+		return salarioBruto;
+	}
 	
 	
 	
