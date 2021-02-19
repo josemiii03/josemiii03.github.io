@@ -51,11 +51,9 @@ public class principal {
 					mostrarEmpleados(empleados);
 					break;
 				case 2:
-					System.out.println("Introduce un nº");
-
-					lectura = (Integer.parseInt(teclado.readLine()));
 					
-					empleados[sacarIndice(lectura)].datosEmpleado();
+					
+					empleados[sacarIndice()].datosEmpleado();
 					
 					break;
 				case 3:
@@ -63,20 +61,18 @@ public class principal {
 					mostrarEmpleados(empleados);
 					break;
 				case 4:
+					mostrarEmpleados(empleados);
 					
 					System.out.println("Introduce un nº para borrar empleado");
 					
 					borrarEmpleado(Integer.parseInt(teclado.readLine()));
 					
 					//empleados[sacarIndice(lectura)] = null;
-					mostrarEmpleados(empleados);
+					
 					break;
 				case 5:
-					System.out.println("Introduce un nº");
-
-					lectura = (Integer.parseInt(teclado.readLine()));
 					
-					int emp = sacarIndice(lectura);
+					int emp = sacarIndice();
 
 					boolean terminarSubmenu = false;
 					do {
@@ -160,7 +156,13 @@ public class principal {
 		}
 		
 	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
-		public static int sacarIndice(int lectura) throws NumberFormatException, IOException {
+		public static int sacarIndice() throws NumberFormatException, IOException {
+			System.out.println("Introduce un nº");
+
+			int lectura = (Integer.parseInt(teclado.readLine()));
+			
+			
+			
 			for (int i = 0; i < empleados.length; i++) {
 				if (empleados[i] != null) {
 					if (empleados[i].getEmp_no() == lectura) {
@@ -168,7 +170,7 @@ public class principal {
 					}
 				}
 			}
-			return -999999; // devuelvo esto para generar un error y expresar que el empleado no existe
+			return -1; // devuelvo esto para generar un error y expresar que el empleado no existe
 		}
 		
 	public static void mostrarEmpleados(empleado[] empleados) {
@@ -259,12 +261,26 @@ public class principal {
 		return -1;
 	}
 	
+	public static int existeEmpleadoInt(int num) {
+		for (int i = 0; i < empleados.length; i++) {
+			if (empleados[i] != null) {
+				if (empleados[i].getEmp_no() == num) {
+					return i;
+				}
+			}
+		}
+		return -1;
+
+	}
+	
 	static void borrarEmpleado(int num) throws NumberFormatException, IOException {
-		if (existeEmpleado(num) == true) {
-			empleados[sacarIndice(num)] = null;
-			System.out.println("Se ha borrado!");
-		} else {
+		int indice = existeEmpleadoInt(num);
+		if (indice == -1) {
 			System.out.println("No se puede borrar por que no existe");
+		} else {
+			System.out.println("Se ha borrado!");
+			empleados[indice] = null;
+			
 		}
 	}
 
