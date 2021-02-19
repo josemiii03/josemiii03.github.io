@@ -51,7 +51,11 @@ public class principal {
 					mostrarEmpleados(empleados);
 					break;
 				case 2:
-					empleados[EmpleadoPorEmp_N(empleados)].datosEmpleado();
+					System.out.println("Introduce un nº");
+
+					lectura = (Integer.parseInt(teclado.readLine()));
+					
+					empleados[sacarIndice(lectura)].datosEmpleado();
 					
 					break;
 				case 3:
@@ -59,12 +63,20 @@ public class principal {
 					mostrarEmpleados(empleados);
 					break;
 				case 4:
-					empleados[EmpleadoPorEmp_N(empleados)] = null;
+					
+					System.out.println("Introduce un nº para borrar empleado");
+					
+					borrarEmpleado(Integer.parseInt(teclado.readLine()));
+					
+					//empleados[sacarIndice(lectura)] = null;
 					mostrarEmpleados(empleados);
 					break;
 				case 5:
+					System.out.println("Introduce un nº");
 
-					int emp = EmpleadoPorEmp_N(empleados);
+					lectura = (Integer.parseInt(teclado.readLine()));
+					
+					int emp = sacarIndice(lectura);
 
 					boolean terminarSubmenu = false;
 					do {
@@ -148,12 +160,7 @@ public class principal {
 		}
 		
 	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
-		public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
-
-			System.out.println("Introduce un nº");
-
-			int lectura = (Integer.parseInt(teclado.readLine()));
-
+		public static int sacarIndice(int lectura) throws NumberFormatException, IOException {
 			for (int i = 0; i < empleados.length; i++) {
 				if (empleados[i] != null) {
 					if (empleados[i].getEmp_no() == lectura) {
@@ -250,6 +257,15 @@ public class principal {
 			}
 		}
 		return -1;
+	}
+	
+	static void borrarEmpleado(int num) throws NumberFormatException, IOException {
+		if (existeEmpleado(num) == true) {
+			empleados[sacarIndice(num)] = null;
+			System.out.println("Se ha borrado!");
+		} else {
+			System.out.println("No se puede borrar por que no existe");
+		}
 	}
 
 	public static void test() throws NumberFormatException, IOException {
