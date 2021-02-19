@@ -258,14 +258,11 @@ public class principal {
 
 	public static int existeEmpleadoInt(int num) {
 		for (int i = 0; i < empleados.length; i++) {
-			if (empleados[i] != null) {
-				if (empleados[i].getEmp_no() == num) {
+			if (empleados[i] != null && empleados[i].getEmp_no() == num) {
 					return i;
 				}
 			}
-		}
 		return -1;
-
 	}
 
 	static void borrarEmpleado(int num) throws NumberFormatException, IOException {
