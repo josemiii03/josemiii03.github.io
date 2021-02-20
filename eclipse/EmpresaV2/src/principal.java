@@ -7,22 +7,21 @@ import java.time.LocalDate;
 public class principal {
 
 	static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
-	
-	static empleado[] empleados = new empleado[5];
 
+	static empleado[] empleados = new empleado[5];
 
 	public static void main(String[] args) {
 
-		//Empleados por defecto....
+		// Empleados por defecto....
 		empleados[1] = new empleado(2, "Muñoz", "Contable", LocalDate.of(2020, 04, 03), 1576);
 		empleados[2] = new empleado(3, "Castaño", "Programador", LocalDate.of(2019, 10, 30), 200);
 		empleados[4] = new empleado(5, "perez", "Limpiador", LocalDate.of(2018, 01, 30), 030);
 
 		boolean terminarMenu = false;
+
+		// int indiceVacio = huecoEmpleado();
 		
-		//int indiceVacio = huecoEmpleado(); 
-		//!!!!!!No añadir empleados por defecto. Hacer metodo para cargarlos y empezar con 0
-		
+
 		do {
 			try {
 
@@ -51,20 +50,27 @@ public class principal {
 					mostrarEmpleados(empleados);
 					break;
 				case 2:
-					empleados[EmpleadoPorEmp_N(empleados)].datosEmpleado();
-					
+
+					empleados[sacarIndice()].datosEmpleado();
+
 					break;
 				case 3:
 					añadirEmpleado(empleados);
 					mostrarEmpleados(empleados);
 					break;
 				case 4:
-					empleados[EmpleadoPorEmp_N(empleados)] = null;
 					mostrarEmpleados(empleados);
+
+					System.out.println("Introduce un nº para borrar empleado");
+
+					borrarEmpleado(Integer.parseInt(teclado.readLine()));
+
+					// empleados[sacarIndice(lectura)] = null;
+
 					break;
 				case 5:
 
-					int emp = EmpleadoPorEmp_N(empleados);
+					int emp = sacarIndice();
 
 					boolean terminarSubmenu = false;
 					do {
@@ -119,8 +125,8 @@ public class principal {
 						}
 
 					} while (terminarSubmenu == false);
-					break;	
-					
+					break;
+
 				case 6:
 					System.out.println("El empleado con el mayor salario es: ");
 					System.out.println(empleados[posicionSalarioMaximo()]);
@@ -132,7 +138,7 @@ public class principal {
 				case 8:
 					test();
 				}
-				
+
 			} catch (ArrayIndexOutOfBoundsException e) { // control de errores
 				System.out.println("Este empleado no existe!!");
 			} catch (NumberFormatException | IOException e) {
@@ -143,27 +149,28 @@ public class principal {
 		} while (terminarMenu == false);
 
 	}
-		public static void editarNum(){
-			
-		}
-		
-	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del array
-		public static int EmpleadoPorEmp_N(empleado[] empleados) throws NumberFormatException, IOException {
 
-			System.out.println("Introduce un nº");
+	public static void editarNum() {
 
-			int lectura = (Integer.parseInt(teclado.readLine()));
+	}
 
-			for (int i = 0; i < empleados.length; i++) {
-				if (empleados[i] != null) {
-					if (empleados[i].getEmp_no() == lectura) {
-						return i;
-					}
+	// Introducir emp_n y te devuelve donde se encuentra el empleado dentro del
+	// array
+	public static int sacarIndice() throws NumberFormatException, IOException {
+		System.out.println("Introduce un nº");
+
+		int lectura = (Integer.parseInt(teclado.readLine()));
+
+		for (int i = 0; i < empleados.length; i++) {
+			if (empleados[i] != null) {
+				if (empleados[i].getEmp_no() == lectura) {
+					return i;
 				}
 			}
-			return -999999; // devuelvo esto para generar un error y expresar que el empleado no existe
 		}
-		
+		return -1; // devuelvo esto para generar un error y expresar que el empleado no existe
+	}
+
 	public static void mostrarEmpleados(empleado[] empleados) {
 		for (int i = 0; i < empleados.length; i++) {
 			if (empleados[i] != null) {
@@ -186,12 +193,10 @@ public class principal {
 			System.out.println("no hay hueco para añadir mas empleados ;-;");
 		}
 	}
-	
-	
-	
+
 	public static boolean existeEmpleado(int emp_no) {
 		int i = 0;
-		while(i<5) {
+		while (i < 5) {
 			if (empleados[i] != null) {
 				if (empleados[i].getEmp_no() == emp_no) {
 					return true;
@@ -200,26 +205,25 @@ public class principal {
 			i++;
 		}
 		return false;
-		
+
 	}
-	
+
 	public static boolean arrayCompleto() {
-		
+
 		int i = 0;
-		while(i<5) {
+		while (i < 5) {
 			if (empleados[i] == null) {
 				return false;
-			} 
+			}
 			i++;
 		}
 		return true;
-		
-	
+
 	}
-	
+
 	public static boolean arrayVacio() {
-		int i=0;
-		while(i<5) {
+		int i = 0;
+		while (i < 5) {
 			if (empleados[i] != null) {
 				return false;
 			}
@@ -227,18 +231,18 @@ public class principal {
 		}
 		return true;
 	}
-	
+
 	public static int posicionSalarioMaximo() {
 		int temp = 0;
 		int indice = 0;
-		for (int i = 1; i<empleados.length; i++) {
+		for (int i = 1; i < empleados.length; i++) {
 			if (empleados[i] != null) {
 				if (empleados[i].salario > temp) {
 					temp = empleados[i].salario;
 					indice = i;
 				}
 			}
-		}	
+		}
 		return indice;
 	}
 
@@ -252,6 +256,26 @@ public class principal {
 		return -1;
 	}
 
+	public static int existeEmpleadoInt(int num) {
+		for (int i = 0; i < empleados.length; i++) {
+			if (empleados[i] != null && empleados[i].getEmp_no() == num) {
+					return i;
+				}
+			}
+		return -1;
+	}
+
+	static void borrarEmpleado(int num) throws NumberFormatException, IOException {
+		int indice = existeEmpleadoInt(num);
+		if (indice == -1) {
+			System.out.println("No se puede borrar por que no existe");
+		} else {
+			System.out.println("Se ha borrado!");
+			empleados[indice] = null;
+
+		}
+	}
+
 	public static void test() throws NumberFormatException, IOException {
 		// mostrarEmpleados(empleados);
 		// System.out.println("El empleado con salario máximo tiene el id:
@@ -261,5 +285,3 @@ public class principal {
 
 	}
 }
-
-	
