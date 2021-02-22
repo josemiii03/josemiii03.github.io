@@ -20,6 +20,7 @@ public class principal {
 		boolean terminarMenu = false;
 
 		// int indiceVacio = huecoEmpleado();
+		// int numero empleado
 		
 
 		do {
@@ -257,6 +258,9 @@ public class principal {
 	}
 
 	public static int existeEmpleadoInt(int num) {
+
+
+		
 		for (int i = 0; i < empleados.length; i++) {
 			if (empleados[i] != null && empleados[i].getEmp_no() == num) {
 					return i;
