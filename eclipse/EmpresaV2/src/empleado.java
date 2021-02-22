@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 
 public class empleado {
+	
 	public int emp_no;
 	public String apellido;
 	public String oficio;
