@@ -41,7 +41,7 @@ public class principal {
 					if (arrayVacio() == false) {
 						mostrarDepartamentos();
 					} else {
-						System.out.println("No hay ningún departamento que Mostrar ;-;");
+						System.out.println("No hay ningún departamento que Mostrar");
 					}
 
 					break;
