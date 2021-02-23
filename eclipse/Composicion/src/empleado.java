@@ -83,8 +83,4 @@ public class empleado {
 				+ fecha_alt + ", salario " + salario ;
 	}
 
-
-	public void datosEmpleado() {
-		System.out.println(toString());
-	}
 }
