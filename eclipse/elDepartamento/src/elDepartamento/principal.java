@@ -55,6 +55,7 @@ public class principal {
 				case 3:
 					if (arrayLLeno() == false) {
 						añadirDepartamento();
+						mostrarDepartamentos();
 					} else {
 						System.out.println("No hay espacio para mas Departamentos por que está lleno");
 					}
@@ -62,12 +63,14 @@ public class principal {
 				case 4:
 					if (arrayVacio() == false) {
 						borrarDepartamentoDepNO();
+						mostrarDepartamentos();
 					} else {
 						System.out.println("No hay ningún departamento para borrar por que está vacio");
 					}
 					break;
 				case 5:
 					if (arrayVacio() == false) {
+						mostrarDepartamentos();
 						editarDepartamento();
 					} else {
 						System.out.println("No hay ningún departamento para editar por que está vacio");
