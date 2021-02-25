@@ -135,11 +135,12 @@
                     <label for="apellidos">Apellidos:</label>
                     <input type="text" value="apellidos" id="apellidos" required ><br>
                     <br>
+                    <label for="tlf">Teléfono</label>
+                    <input type="tlf" id="tlf" pattern="[0-9]{3}-[0-9]{3}" required > <br><br>
                     
                     <label for="nac">Fecha de Nacimiento</label>
                     <input type="date" id="nac" required >
-
-                  
+                    
                     <br>
                     <br>
                     
@@ -184,7 +185,7 @@
                     </fieldset>
 
                     <br>
-                    <input type="submit" value="ENVIAR">                    
+                    <input type="submit" value="ENVIAR" onclick="alert('Enviado!')">                    
                 </form>
                 
            
