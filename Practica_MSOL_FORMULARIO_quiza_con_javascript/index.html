@@ -64,7 +64,6 @@
             }
             
             .articulos{
-                float;
                 display: block;
                 margin: 30px 20px 22px 20px;
                 background-color: skyblue;
@@ -128,34 +127,62 @@
                     
                     
                     <h1>HOJA DE INSCRIPCCIÓN</h1>
-                    <label for="fname">Nombre:</label>
-                    <input type="text" value="Manolo"><br>
-                    <label for="lname">Apellidos:</label>
-                    <input type="text" value="pizarro" >
+                 
+                    <fieldset>
+                    <legend>Datos Personales</legend>
+                    <label for="nombre" >Nombre:</label>
+                    <input type="text" value="nombre" id="nombre" required><br>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" value="apellidos" id="apellidos" required ><br>
+                    <br>
+                    
+                    <label for="nac">Fecha de Nacimiento</label>
+                    <input type="date" id="nac" required >
+
+                  
+                    <br>
+                    <br>
+                    
+                    <label >Correo Electronico</label>
+                    <input type="email" value="email" required>
+                    
                     
                     <br>
+                    
                     <br>
+                    
                     
                     <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
+                    <label for="male">Hombre</label>
                     <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
+                    <label for="female">Mujer</label>
                     <input type="radio" id="other" name="gender" value="other">
-                    <label for="other">Other</label>
+                    <label for="other">Otros</label>
                     
-                    
+                    </fieldset>
+                     
                     <br>
                     <br>
+                    
+                    <fieldset>
+                    <legend>Datos Personales</legend>
                     
                     <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                    <label for="vehicle1"> FERRARI</label><br>
+                    <label for="vehicle1"> Base de datos</label><br>
                     <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle2"> I have a car</label><br>
+                    <label for="vehicle2"> Programación web</label><br>
                     <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                    <label for="vehicle3"> I have a boat</label>
+                    <label for="vehicle3"> Fol</label>
+                    <label for="vehicle4"> Programación java</label><br>
+                    <input type="checkbox" id="vehicle4" name="vehicle4" value="Car">
+                    <label for="vehicle5"> Entorno de desarrollo</label><br>
+                    <input type="checkbox" id="vehicle5" name="vehicle5" value="Boat">
+                    <label> Sistemas Informáticos</label>
+                    
                     
                     <br>
-                    
+                    </fieldset>
+
                     <br>
                     <input type="submit" value="ENVIAR">                    
                 </form>
