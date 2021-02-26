@@ -1,199 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="José Miguel Calderón de la Barca Gutiérrez">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" type="text/css" href="Estilo.css"> -->
-        <title>La Web de José MIguel Calderón</title>
-        <!--Te pongo aquí el estilo por no complicarte con mas archivos -->
-        <style> 
-            body{
-                font-family:sans-serif;
-                padding:10% 5% 20% 5%;
-                max-width: 900px;
-                border-radius: 20px;
-                margin: auto;
-                background-color: black;
-            }
-            p{
-                font-size:21px;
-            }
-            .fondo{
-                background-color: aquamarine;
-                border-radius: 20px;
-                box-shadow: 1px 1px 52px -1px rgba(190, 220, 0, 1);
-                
-                
-            }
-            .titulo h1{
-                border-radius: 19px 19px 0px 0px;
-                padding: 20px 0px 20px 0px;
-                color: white;
-                background-color: #303F9F;
-                text-align: center;
-                display: block;            
-                width: 100%;
-                margin: 0px;
-                font-size: calc(1rem + 2vw);
-            }
-            footer{
-                border-radius: 0px 0px 19px 19px;
-                color: white;
-                background-color: #303F9F;
-                display: flex;            
-                justify-content: center;
-                width: 100%;
-                margin: 10px 0px 110px 0px;
-                font-size: 40px;
-            }
-            .navegacion{
-                
-                overflow: hidden;
-                background-color: #5eb8ff;
-                display: flex;
-                justify-content: center;
-            }
-            .navegacion a{
-                text-decoration: none;
-                color:black;
-                padding: 10px;
-            }
-            .navegacion a:hover {
-                color: azure;
-                background-color: red;  
-            }
-            
-            .articulos{
-                display: block;
-                margin: 30px 20px 22px 20px;
-                background-color: skyblue;
-                border-radius: 10px;
-                padding: 20px 30px 20px 30px;
-                text-align:center;
-            }
-            .articulos h1{
-                color: red;
-                font-size: calc(1rem + 1vw);
-            }
-            img{
-                width: 300px;           
-            }
-            aside {
-                width: 200px;
-                margin: 50px;
-                float: right;
-                border-radius: 10px;
-                background-color: blueviolet;
-                color: aliceblue;
-                text-align: center;
-                
-            }
-            ul{
-                text-align: left;
-                font-size: 20px;
-            }
-            footer p{
-                font-size: calc(0.5rem + 1vw)
-            }
-            form{
-                background-color: black;
-                border-radius: 20px;
-                padding: 5% 0% 5% 0%;
-                margin: 5% 15% 5% 15%;
-                color: azure;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="José Miguel Calderón de la Barca Gutiérrez">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" href="Estilo.css"> -->
+    <title>La Web de José MIguel Calderón</title>
+    <!--Te pongo aquí el estilo por no complicarte con mas archivos -->
+    <style>
         
-        <script>
+        @font-face { 
+        font-family: 'Product Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2')
+        }
         
-           // alert("Hola buenos dias");
-        
-        </script>
-        
-        <div class="fondo">
-            <header class="titulo">
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            padding: 10% 5% 20% 5%;
+            max-width: 900px;
+            border-radius: 20px;
+            margin: auto;
+            font-family: 'Product Sans';
+        }
+
+        p {
+            font-size: 21px;
+        }
+
+        .fondo {
+            background-color: aquamarine;
+            border-radius: 20px;
+            box-shadow: 1px 1px 52px -1px rgba(255, 0, 0, 1);
+        }
+
+        .titulo h1 {
+            border-radius: 19px 19px 0px 0px;
+            padding: 20px 0px 20px 0px;
+            color: white;
+            background-color: #303F9F;
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin: 0px;
+            font-size: calc(1rem + 2vw);
+        }
+
+        footer {
+            border-radius: 0px 0px 19px 19px;
+            color: white;
+            background-color: #303F9F;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 10px 0px 110px 0px;
+            font-size: 40px;
+        }
+
+        .navegacion {
+
+            overflow: hidden;
+            background-color: #5eb8ff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navegacion a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+
+        .navegacion a:hover {
+            color: azure;
+            background-color: red;
+        }
+
+        .articulos {
+            display: block;
+            margin: 30px 20px 22px 20px;
+            background-color: skyblue;
+            border-radius: 10px;
+            padding: 20px 30px 20px 30px;
+            text-align: center;
+        }
+
+        .articulos h1 {
+            color: red;
+            font-size: calc(1rem + 1vw);
+        }
+
+        img {
+            width: 300px;
+        }
+
+        aside {
+            width: 200px;
+            margin: 50px;
+            float: right;
+            border-radius: 10px;
+            background-color: blueviolet;
+            color: aliceblue;
+            text-align: center;
+
+        }
+
+        ul {
+            text-align: left;
+            font-size: 20px;
+        }
+
+        footer p {
+            font-size: calc(0.5rem + 1vw)
+        }
+
+        .DatosPersonales {
+            background-color: lightskyblue;
+            border-radius: 20px;
+            padding: 5% 0% 5% 0%;
+            margin: 5% 15% 5% 15%;
+            padding-right: 25px;
+            padding-left: 25px;
+            font-size: 20px;
+        }
+
+        .otrosdatos {
+            background-color: lightcoral;
+            border-radius: 20px;
+            padding: 5% 0% 5% 0%;
+            margin: 5% 15% 5% 15%;
+            padding-right: 25px;
+            padding-left: 25px;
+            color: blue;
+            font-size: 20px;
+        }
+
+        .otrosdatos textarea {
+            width: 100%;
+            height: 200px;
+        }
+
+        .submit {
+            background-color: lightgreen;
+            border-radius: 20px;
+            margin: 5% 15% 5% 15%;
+            text-align: center;
+            padding-bottom: 12px
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // alert("Hola buenos dias");
+
+    </script>
+
+    <div class="fondo">
+        <header class="titulo">
             <h1>La Web de José Miguel</h1>
             <nav class="navegacion">
                 <a href="index.html">Volver al inicio</a>
-               
+
             </nav>
-            </header>
-            
-                           
-                <form>
-                    
-                    
-                    <h1>HOJA DE INSCRIPCCIÓN</h1>
-                 
-                    <fieldset>
-                    <legend>Datos Personales</legend>
-                    <label for="nombre" >Nombre:</label>
-                    <input type="text" value="nombre" id="nombre" required><br>
+        </header>
+        <h1>HOJA DE INSCRIPCCIÓN</h1>
+        <form id="uno">
+            <div class="DatosPersonales">
+
+                <fieldset>
+                    <legend>DATOS PERSONALES</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required><br>
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" value="apellidos" id="apellidos" required ><br>
+                    <input type="text" id="apellidos" required><br>
                     <br>
                     <label for="tlf">Teléfono</label>
-                    <input type="tlf" id="tlf" pattern="[0-9]{3}-[0-9]{3}" required > <br><br>
-                    
+                    <input type="tel" id="tlf" placeholder="727-45-67-48" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required> <br><br>
+
                     <label for="nac">Fecha de Nacimiento</label>
-                    <input type="date" id="nac" required >
-                    
+                    <input type="date" id="nac" required>
+
                     <br>
                     <br>
-                    
-                    <label >Correo Electronico</label>
+
+                    <label>Correo Electronico</label>
                     <input type="email" value="email" required>
-                    
-                    
+
+
                     <br>
-                    
+
                     <br>
-                    
-                    
+
+
                     <input type="radio" id="male" name="gender" value="male">
                     <label for="male">Hombre</label>
                     <input type="radio" id="female" name="gender" value="female">
                     <label for="female">Mujer</label>
                     <input type="radio" id="other" name="gender" value="other">
                     <label for="other">Otros</label>
-                    
-                    </fieldset>
-                     
-                    <br>
-                    <br>
-                    
-                    <fieldset>
-                    <legend>Datos Personales</legend>
-                    
-                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                    <label for="vehicle1"> Base de datos</label><br>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle2"> Programación web</label><br>
-                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                    <label for="vehicle3"> Fol</label>
-                    <label for="vehicle4"> Programación java</label><br>
-                    <input type="checkbox" id="vehicle4" name="vehicle4" value="Car">
-                    <label for="vehicle5"> Entorno de desarrollo</label><br>
-                    <input type="checkbox" id="vehicle5" name="vehicle5" value="Boat">
-                    <label> Sistemas Informáticos</label>
-                    
-                    
-                    <br>
-                    </fieldset>
+
+                </fieldset>
+
+            </div>
+
+            <div class="otrosdatos">
+
+                <fieldset>
+                    <legend>OTROS DATOS</legend>
+
+                    <label for="cert">Sube el certificado de notas</label>
+
+                    <input type="file" id="cert" required>
+
+                    <p>Seleccione sus estudios anteriores:</p>
+                    <label for="asig">Elige:</label>
+                    <select id="asig" required>
+                        <option value=""> GRADO MEDIO</option>
+                        <option value=""> GRADO SUPERIOR</option>
+                        <option value="">BACHILLER</option>
+
+                    </select>
+
+                    <p>Selecciones asignaturas que va a combalidar:</p>
+                    <input type="checkbox" id="asig1">
+                    <label for="asig1"> FOL</label><br>
+                    <input type="checkbox" id="asig2">
+                    <label for="asig2"> EMPRESA</label><br><br>
+                    <label for="nota">Introduce tu nota media entre 5 y 10</label><br>
+                    <input type="number" id="nota" min="5" max="10" required>
+
+                    <p>Otras peticiones:</p>
+
+                    <textarea></textarea>
+
 
                     <br>
-                    <input type="submit" value="ENVIAR" onclick="alert('Enviado!')">                    
-                </form>
-                
-           
-            
-            <footer>
-                <p>Copyright © 2021 José Miguel Calderón de la Barca Gutiérrez</p> 
-            </footer>
-          </div> 
-    </body>
+                </fieldset>
+
+                <br>
+
+
+            </div>
+
+
+
+            <div class="submit">
+                <input type="checkbox" id="req" required>
+                <label for="req"> Acepto que toda la información introducida es valida.</label><br>
+                <input type="reset" value="BORRAR" onclick="alert('Atención Se va a borrar el contenido')">
+                <input type="submit" value="ENVIAR">
+            </div>
+
+
+        </form>
+        <footer>
+            <p>Copyright © 2021 José Miguel Calderón de la Barca Gutiérrez</p>
+        </footer>
+
+    </div>
+</body>
+
 </html>
