@@ -91,7 +91,7 @@ public class Trabajador {
 		this.enactivo = enactivo;
 	}
 	public void ModificarSalario(double porcentaje) {
-		this.salario+=salario*porcentaje;
+		this.salario+=salario*(porcentaje/100);
 	}
 	public String toString() {
 		String s;

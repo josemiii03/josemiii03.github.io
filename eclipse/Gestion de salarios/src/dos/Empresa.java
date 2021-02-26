@@ -8,7 +8,7 @@ public class Empresa {
 		contadortrabajadores=0;
 	}
 	public void NuevoTrabajador(Trabajador t) {
-		int maximo=0;
+		int maximo=contadortrabajadores;
 		for (int i=0;i<contadortrabajadores;i++) {
 			if (ListaTrabajadores[i].getId()>maximo) {
 				maximo=ListaTrabajadores[i].getId();
@@ -24,7 +24,7 @@ public class Empresa {
 		System.out.println("=====================================");
 		System.out.println("Id      Nombre               Apellidos                      Salario         Situación (A/B)");
 		System.out.println("--------------------------------------------------------------------------------------------");
-		for (int i=0;i<=contadortrabajadores;i++) {
+		for (int i=0;i<contadortrabajadores;i++) {
 			System.out.println(ListaTrabajadores[i]);
 		}
 	}
@@ -51,8 +51,8 @@ public class Empresa {
 	public void obtenerMasaSalarial() {
 		double total=0;
 		for (int i=0;i<contadortrabajadores;i++) {
-			if (!ListaTrabajadores[i].isEnactivo()) {
-				total-=ListaTrabajadores[i].getSalario();
+			if (ListaTrabajadores[i].isEnactivo()) {
+				total+=ListaTrabajadores[i].getSalario();
 			}
 		}
 		System.out.println("===================================================================================");
@@ -60,6 +60,18 @@ public class Empresa {
 		
 	}
 	public boolean darDeBaja(String nom, String ap) {
+		int trab=ObtenerIdTrabajador(nom,ap);
+		if (trab!=-1) {
+			for (int i=0;i<contadortrabajadores;i++) {
+				if (ListaTrabajadores[i].getId()==trab) {
+					ListaTrabajadores[i].setEnactivo(false);
+					return true;
+				}	
+			}
+		}
+		return false;		
+	}
+	public boolean darDeAlta(String nom, String ap) {
 		int trab=ObtenerIdTrabajador(nom,ap);
 		if (trab!=-1) {
 			for (int i=0;i<contadortrabajadores;i++) {
@@ -84,6 +96,9 @@ public class Empresa {
 		e.NuevoTrabajador(T4);
 		e.IncrementarSalario("Juan","Gómez López", 10);
 		e.darDeBaja("Justo", "Márquez Sánchez");
+		e.MostrarListado();
+		e.obtenerMasaSalarial();
+		e.darDeAlta("Justo", "Márquez Sánchez");
 		e.MostrarListado();
 		e.obtenerMasaSalarial();
 		//FIN DEL CÓDIGO DE PRUEBAS
