@@ -13,6 +13,7 @@ public class Empresa {
 			if (ListaTrabajadores[i].getId()>maximo) {
 				maximo=ListaTrabajadores[i].getId();
 			}
+			
 		}
 		t.setId(maximo);
 		ListaTrabajadores[contadortrabajadores]=new Trabajador(t);
