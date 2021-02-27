@@ -51,19 +51,35 @@ public class departamento {
 
 	
 	**/
-
+	private empleado empleados[] = new empleado[5];
 	
 	public departamento(int dept_no, String dNombre, String localizacion) {
 		this.dept_no = dept_no;
 		this.dNombre = dNombre;
 		this.localizacion = localizacion;
 		
-		empleado[] empleados = new empleado[5];
 		empleados[1] = new empleado(0, "Paco", null, null, 0);
 		empleados[2] = new empleado(2, "Manolo", null, null, 0);
 		
-		
 	}
+
+	@Override
+	public String toString() {
+		return "departamento [dept_no=" + dept_no + ", dNombre=" + dNombre + ", localizacion=" + localizacion
+				+ ", empleados=" + Arrays.toString(empleados) + "]";
+	}
+
+	public empleado[] getEmpleados() {
+		return empleados;
+	}
+
+	public void setEmpleados(String nombre) {
+		this.empleados[1].setApellido(nombre);;
+	}
+	
+	
+	
+	
 	
 
 	

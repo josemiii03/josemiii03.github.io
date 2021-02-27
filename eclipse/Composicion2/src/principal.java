@@ -4,7 +4,7 @@ public class principal {
 	
 	public static void main(String[] args) {
 		
-		
+		metodoComposicion() ;
 	}
 	
 	public static void metodoAgregacion() {
@@ -27,8 +27,13 @@ public class principal {
 		
 		departamento[] departamentos = new departamento[5];
 
+		departamentos[1] = new departamento(0, null, null);
+		departamentos[2] = new departamento(0, "dsdsd", null);
 		
-		departamentos[1] = new departamento(1,"Matemáticas" , "Piso Bajo");
+		departamentos[1].setEmpleados("manolo");
+		
+		System.out.println(departamentos[1]);
+		System.out.println(departamentos[2]);
 
 		
 	}
