@@ -35,6 +35,5 @@ public class principal {
 		System.out.println(departamentos[1]);
 		System.out.println(departamentos[2]);
 
-		
 	}
 }
