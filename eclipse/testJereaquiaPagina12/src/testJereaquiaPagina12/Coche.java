@@ -8,20 +8,24 @@ public class Coche extends Vehiculo {
 		gasolina += litros;
 	}
 
+	@Override
+	public void acelera() {
+		velocidad=90;
+		gasolina*=0.9;
+		
+	}
+
 	public Coche(int velocidad, int gasolina) {
 		super(velocidad, gasolina);
 		this.gasolina = gasolina;
-	}
-	
-	public void acelerar(double kmh) {
-		super.acelerar(kmh);
-		gasolina*=0.9;
 	}
 
 	@Override
 	public String toString() {
 		return "Coche [gasolina=" + gasolina + ", velocidad=" + velocidad + "]";
 	}
+	
+	
 	
 	
 	

@@ -1,6 +1,6 @@
 package testJereaquiaPagina12;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 	public int velocidad;
 	public int ruedas;
 
@@ -8,8 +8,10 @@ public class Vehiculo {
 		velocidad = 0;
 	}
 
-	public void acelerar(double kmh) {
-		velocidad += kmh;
+	abstract public void acelera();
+
+	public void para() {
+		velocidad = 0;
 	}
 
 	public Vehiculo(int velocidad, int ruedas) {
@@ -17,6 +19,5 @@ public class Vehiculo {
 		this.velocidad = velocidad;
 		this.ruedas = ruedas;
 	}
-	
-	
+
 }
