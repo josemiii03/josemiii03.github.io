@@ -4,11 +4,11 @@ public class principal {
 	
 	public static void main(String[] args) {
 		
-		metodoComposicion() ;
+		metodoAgregacion() ;
 	}
 	
 	public static void metodoAgregacion() {
-		/**
+		
 		departamento[] departamentos = new departamento[5];
 		
 		empleado[] empleados = new empleado[5];
@@ -20,11 +20,11 @@ public class principal {
 		
 		
 		System.out.println(departamentos[1]);
-		**/
+		
 	}
 	
 	public static void metodoComposicion() {
-		
+		/**
 		departamento[] departamentos = new departamento[5];
 
 		departamentos[1] = new departamento(0, null, null);
@@ -34,6 +34,6 @@ public class principal {
 		
 		System.out.println(departamentos[1]);
 		System.out.println(departamentos[2]);
-
+		**/
 	}
 }
