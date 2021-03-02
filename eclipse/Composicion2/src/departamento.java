@@ -32,7 +32,7 @@ public class departamento {
 	String dNombre;
 	String localizacion;
 	
-	/**private empleado personal[];
+	private empleado personal[];
 	
 	public departamento(int dept_no, String dNombre, String localizacion, empleado m[]) {
 		personal = m;
@@ -50,7 +50,9 @@ public class departamento {
 	}
 
 	
-	**/
+	
+	
+	/**
 	private empleado empleados[] = new empleado[5];
 	
 	public departamento(int dept_no, String dNombre, String localizacion) {
@@ -68,6 +70,8 @@ public class departamento {
 		return "departamento [dept_no=" + dept_no + ", dNombre=" + dNombre + ", localizacion=" + localizacion
 				+ ", empleados=" + Arrays.toString(empleados) + "]";
 	}
+	
+	
 
 	public empleado[] getEmpleados() {
 		return empleados;
@@ -79,6 +83,7 @@ public class departamento {
 	
 	
 	
+	**/
 	
 	
 
