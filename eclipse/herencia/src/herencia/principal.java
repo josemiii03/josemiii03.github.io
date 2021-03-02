@@ -5,9 +5,6 @@ public class principal {
 
 	public static void main(String[] args) {
 	
-	
-		
-	
 	empleado lista[] = new empleado[5];
 	
 	//test agregación
@@ -27,10 +24,5 @@ public class principal {
 	
 	System.out.println(s);
 	
-	
-	
-	
 	}
-	
-
 }
