@@ -4,63 +4,75 @@ import java.io.InputStreamReader;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 
+
+
 public class principal {
+	
 	static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
-	static departamento dep1;
+	static departamento[] listaDepartamentos = new departamento[5];
 
-	static empleado[] empleados = new empleado[5];
+	static empleado[] listaEmpleados = new empleado[5];
 	
+	public static int numeroDepartamentos = 0;
+	
+	public static int huecoDepartamentos = 0;
+		
 	public static int numeroEmpleados = 0;
 	
 	public static int huecoEmpleados = 0;
 
 	
-	
-	
-	
 	public static void main(String[] args) {
 		
-		huecoEmpleados = buscaHueco();
-		
-		dep1 = new departamento(1, "Matemáticas", "Piso Bajo", empleados);
-		
-		System.out.println(dep1.getPersonal());
+		huecoEmpleados = buscaHuecoa();
 		
 		crearEmpleado(0);
-		crearEmpleado(0);
-		crearEmpleado(0);
-		crearEmpleado(0);
-		crearEmpleado(1);
 		
-		System.out.println(dep1);
-		
-		
+		System.out.println(listaEmpleados[1]);
+		System.out.println(listaEmpleados[1]);
 		
 		
 	}
 	
-	public static void crearEmpleado(int tipo) {
+ static void crearEmpleado(int tipo) {
 		if (numeroEmpleados != 5){
-			if (tipo == 0){
-				empleados[huecoEmpleados] = new empleado(huecoEmpleados+1, null, null, null, 0, dep1);
-				huecoEmpleados++;
-				numeroEmpleados++;
-			}
-			
-			if (tipo == 1){
-				empleados[huecoEmpleados] = new jefe(huecoEmpleados+1, 0, null, null, null, 0, dep1, 0);
-				numeroEmpleados++;
-				huecoEmpleados++;
+		switch(tipo) {
+		
+		default:
+			listaEmpleados[huecoEmpleados] = new empleado(huecoEmpleados+1, null, null, null, 0, listaDepartamentos[1]);
+			huecoEmpleados++;
+			numeroEmpleados++;
+			break;
+		case 1:
+			listaEmpleados[huecoEmpleados] = new directivo(0, null, null, null, tipo, null, tipo);
+			numeroEmpleados++;
+			huecoEmpleados++;
+			break;
+		case 2:
+			listaEmpleados[huecoEmpleados] = new directivo(0, null, null, null, tipo, null, tipo);
+			numeroEmpleados++;
+			huecoEmpleados++;
 			}
 		}
 	}
+ 
+ static void mostrarEmpleadosSegunDepartamentos(){
+	 
+ }
+ static void crearDepartamento(){
+	 if (numeroDepartamentos != 5) {
+				listaDepartamentos[huecoDepartamentos] = new departamento(0, null, null, listaEmpleados);
+				huecoDepartamentos++;
+				numeroDepartamentos++;
+		}
+ }
 	
 	
-	public static int buscaHueco() {
+	public static int buscaHuecoa() {
 		int i;
-		for (i = 0; i < empleados.length; i++) {
-			if (empleados[i] == null) {
+		for (i = 0; i < listaEmpleados.length; i++) {
+			if (listaEmpleados[i] == null) {
 				return i;
 			}
 		}

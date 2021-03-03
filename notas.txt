@@ -1,0 +1,4 @@
+si empleado x . getter departamento = departamento[1]
+
+	Mostrar por pantalla empleado[x] ??????
+
