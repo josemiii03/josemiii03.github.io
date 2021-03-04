@@ -25,8 +25,8 @@ public class directivo extends empleado{
 
 	@Override
 	public String toString() {
-		return "directivo [comision=" + comision + ", emp_no=" + emp_no + ", apellido=" + apellido + ", oficio="
-				+ oficio + ", fecha_alt=" + fecha_alt + ", salario=" + salario + "]";
+		return  "\n" + "Empleado nº " + emp_no + ", apellido " + apellido + ", oficio " + oficio + ", fecha_alt "
+				+ fecha_alt + ", salario " + salario + ", comisión " + comision;
 	}
 
 	

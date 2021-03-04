@@ -57,7 +57,8 @@ public class departamento {
 		return "departamento [dept_no=" + dept_no + ", dNombre=" + dNombre + ", localizacion=" + localizacion
 				+ ", personal=" + Arrays.toString(personal) + "]";
 	}
-	
+
+
 	
 
 	

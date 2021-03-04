@@ -23,8 +23,8 @@ public class analista extends empleado{
 
 	@Override
 	public String toString() {
-		return "analista [herramienta=" + herramienta + ", emp_no=" + emp_no + ", apellido=" + apellido + ", oficio="
-				+ oficio + ", fecha_alt=" + fecha_alt + ", salario=" + salario + "]";
+		return  "\n" + "Empleado nº " + emp_no + ", apellido " + apellido + ", oficio " + oficio + ", fecha_alt "
+				+ fecha_alt + ", salario " + salario + ", herramienta " + herramienta;
 	}
 
 	

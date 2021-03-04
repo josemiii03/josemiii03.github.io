@@ -13,7 +13,7 @@ public class empleado{
 	@Override
 	public String toString() {
 		return  "\n" + "Empleado nº " + emp_no + ", apellido " + apellido + ", oficio " + oficio + ", fecha_alt "
-				+ fecha_alt + ", salario " + salario ;
+				+ fecha_alt + ", salario " + salario + dep.getdNombre() ;
 	}
 
 	public empleado(int emp_no, String apellido, String oficio, LocalDate fecha_alt, int salario, departamento dep) {
@@ -31,6 +31,11 @@ public class empleado{
 		return emp_no;
 	}
 
+	
+	public void reducirEmpNo() {
+		this.emp_no = emp_no - 1;
+	}
+	
 	public void setEmp_no(int emp_no) {
 		this.emp_no = emp_no;
 	}
