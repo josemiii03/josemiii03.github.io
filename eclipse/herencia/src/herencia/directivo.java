@@ -17,6 +17,11 @@ public class directivo extends empleado{
 				+ oficio + ", fecha_alt=" + fecha_alt + ", salario=" + salario + "]";
 	}
 
+	void aumentarSueldo() {
+		System.out.println("Soy el directivo");
+		
+	}
+
 	
 	
 

@@ -3,7 +3,7 @@ import java.time.LocalDate;
 
 
 
-public class empleado {
+public abstract class empleado {
 	
 	public int emp_no;
 	public String apellido;
@@ -18,7 +18,11 @@ public class empleado {
 	 * @param oficio
 	 * @param fecha_alt
 	 * @param salario
+	 * @return 
 	 */
+	
+	abstract void aumentarSueldo();
+	
 	public empleado(int emp_no, String apellido, String oficio, LocalDate fecha_alt, int salario) {
 		super();
 		this.emp_no = emp_no;
