@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class principal {
 
-	final static int maxEmpleados = 5;
+	final static int maxEmpleados = 6;
 	
 	final static int maxDepartamentos = 5;
 
@@ -33,12 +33,21 @@ public class principal {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 
 		crearDepartamento();
+		crearDepartamento();
+		crearDepartamento();
+		crearDepartamento();
 
 		crearEmpleado(0, listaDepartamentos[0]);
+		crearEmpleado(1, listaDepartamentos[0]);
+		crearEmpleado(0, listaDepartamentos[0]);
+		
+		crearEmpleado(2, listaDepartamentos[1]);
+		crearEmpleado(0, listaDepartamentos[1]);
+		crearEmpleado(2, listaDepartamentos[1]);
 		
 		
-		
-		mostrarEmpleados();
+		mostrarEmpleadosDeUnDepartamento(listaDepartamentos[1]);
+
 		
 		
 		
@@ -82,6 +91,18 @@ public class principal {
 	
 	
 	//----------------------- MOSTRADO 
+	
+	public static void mostrarEmpleadosDeUnDepartamento(departamento departamento) {
+		
+		for (int i = 0; i < listaEmpleados.length; i++) {
+			if (listaEmpleados[i] != null) {
+				if(listaEmpleados[i].getDepNum() == departamento.getDept_no()) {
+				System.out.println(listaEmpleados[i]);
+				}
+			}
+		}
+	}
+	
 	public static void mostrarDepartamentos() {
 		for (int i = 0; i < listaDepartamentos.length; i++) {
 			if (listaDepartamentos[i] != null) {
