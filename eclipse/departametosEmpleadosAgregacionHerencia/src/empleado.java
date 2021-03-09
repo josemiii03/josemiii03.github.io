@@ -75,7 +75,10 @@ public class empleado{
 	public departamento getDep() {
 		return dep;
 	}
-
+	
+	public int getDepNum() {
+		return dep.getDept_no();
+	}
 	public void setDep(departamento dep) {
 		this.dep = dep;
 	}
