@@ -17,6 +17,11 @@ public class directivo extends empleado{
 				+ oficio + ", fecha_alt=" + fecha_alt + ", salario=" + salario + "]";
 	}
 
+	@Override
+	public void aumentoDeSueldo() {
+		System.out.println("Soy el Directivo");
+	}
+
 	
 	
 

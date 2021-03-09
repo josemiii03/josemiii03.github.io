@@ -21,6 +21,8 @@ public class analista extends empleado{
 		this.herramienta = herramienta;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 		return  "\n" + "Empleado nº " + emp_no + ", apellido " + apellido + ", oficio " + oficio + ", fecha_alt "

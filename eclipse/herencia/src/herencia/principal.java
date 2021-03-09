@@ -5,24 +5,15 @@ public class principal {
 
 	public static void main(String[] args) {
 	
-	empleado lista[] = new empleado[5];
+	empleado empleados[] = new empleado[5];
 	
-	//test agregación
-	//departamento dep = new departamento(0, "Correos Express SA", null,lista);
-		
-	lista[0] = new empleado(0, "paco", "mensajero", null, 15);
+	empleados[1] = new directivo(0, "cesar", "CEO", null, 15, 1000);
 	
-	lista[1] = new directivo(0, "cesar", "CEO Correos Express", null, 15, 1000);
+	empleados[3] = new analista(0, "gojo", "Android Developer", null, 3, "eclipse");
 	
-	lista[3] = new analista(0, "gojo", "Ingeniero Analista", null, 3, "lupa");
+	empleados[1].aumentoDeSueldo();
 	
-	String s ="";
-	
-	s+=lista[0];
-	s+=lista[1];
-	s+=lista[3];
-	
-	System.out.println(s);
+	empleados[3].aumentoDeSueldo();
 	
 	}
 }
