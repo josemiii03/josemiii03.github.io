@@ -17,7 +17,6 @@ public class analista extends empleado{
 				+ oficio + ", fecha_alt=" + fecha_alt + ", salario=" + salario + "]";
 	}
 
-	@Override
 	public void aumentoDeSueldo() {
 		System.out.println("Soy el Analista");
 	}
